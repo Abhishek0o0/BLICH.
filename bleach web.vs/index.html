@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLEACH — No Time For Worry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+  <div class="panel">
+    <header class="site-header">
+      <a class="brand" href="#/">BLEACH</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" aria-label="Main">
+        <a href="#/watch" data-link="watch">Watch Anime</a>
+        <a href="#/characters" data-link="characters">Characters</a>
+        <a href="#/manga" data-link="manga">Manga</a>
+        <a href="#/storyline" data-link="storyline">Storyline</a>
+        <span class="auth" id="auth"></span>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HOME -->
+      <section class="page" data-route="home" aria-labelledby="h-home">
+        <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+        <div class="hero">
+          <div class="hero-text">
+            <span class="tag">Bleach</span>
+            <h1 id="h-home">No Time<br>For <span class="pill">Worry</span></h1>
+            <p class="quote">We can’t waste time worrying<br>about the what if's.</p>
+            <p class="quote-id">(Kita tidak bisa membuang waktu<br>untuk mengkhawatirkan bagaimana<br>jika ini terjadi.)</p>
+            <p class="who">Ichigo Kurosaki</p>
+            <p class="credit">Fan-made design study. Not affiliated with the rights holders.</p>
+          </div>
+          <figure class="hero-art">
+            <img id="heroImg" src="assets/images/ichigo_cutout.png" alt="Ichigo Kurosaki in Human form, holding a large sword over his shoulder" onerror="this.hidden=true">
+            <div class="ph" id="heroPh"><span>Ichigo artwork<br><small>add assets/images/ichigo.png</small></span></div>
+          </figure>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Ichigo forms" id="tabs"></div>
+      </section>
+
+      <!-- WATCH -->
+      <section class="page" data-route="watch" aria-labelledby="h-watch" hidden>
+        <h2 id="h-watch" class="title">Watch Anime</h2>
+        <div class="player" id="player">
+          <video id="video" controls playsinline hidden></video>
+          <div class="player-empty" id="playerEmpty"><span class="play">&#9654;</span><p>Select a video clip to begin</p></div>
+        </div>
+        <p class="now" id="now" aria-live="polite"></p>
+        <div class="two">
+          <article class="card upload">
+            <h3>Upload anime video / clip</h3>
+            <p>Plays in your browser only. Nothing is sent to a server.</p>
+            <input type="file" id="videoInput" accept="video/*" aria-label="Upload anime video">
+          </article>
+          <article class="card upload">
+            <h3>Upload anime image</h3>
+            <p>Preview stays on this device.</p>
+            <input type="file" id="imageInput" accept="image/*" aria-label="Upload anime image">
+            <img id="imagePreview" alt="Uploaded preview" hidden>
+          </article>
+        </div>
+        <h3 class="sub">Episodes &amp; clips</h3>
+        <ul class="clips" id="clips"></ul>
+      </section>
+
+      <!-- CHARACTERS -->
+      <section class="page" data-route="characters" aria-labelledby="h-char" hidden>
+        <div class="blob b2"></div>
+        <h2 id="h-char" class="title">Characters</h2>
+        <div class="grid" id="charGrid"></div>
+      </section>
+
+      <!-- MANGA -->
+      <section class="page" data-route="manga" aria-labelledby="h-manga" hidden>
+        <div class="blob b3"></div>
+        <h2 id="h-manga" class="title">Manga</h2>
+        <div class="grid" id="mangaGrid"></div>
+      </section>
+
+      <!-- STORYLINE -->
+      <section class="page" data-route="storyline" aria-labelledby="h-story" hidden>
+        <div class="blob b1"></div>
+        <h2 id="h-story" class="title">Storyline</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <!-- LOGIN -->
+      <section class="page narrow" data-route="login" aria-labelledby="h-login" hidden>
+        <h2 id="h-login" class="title">Sign in</h2>
+        <form class="form" id="loginForm" novalidate>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+          <p class="error" role="alert" id="loginError"></p>
+          <button class="btn" type="submit">Sign in</button>
+          <p class="alt">New here? <a href="#/signup">Create an account</a></p>
+        </form>
+      </section>
+
+      <!-- SIGNUP -->
+      <section class="page narrow" data-route="signup" aria-labelledby="h-signup" hidden>
+        <h2 id="h-signup" class="title">Sign up</h2>
+        <form class="form" id="signupForm" novalidate>
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Password<input type="password" name="password" autocomplete="new-password" required></label>
+          <label>Confirm password<input type="password" name="confirm" autocomplete="new-password" required></label>
+          <p class="error" role="alert" id="signupError"></p>
+          <button class="btn" type="submit">Create account</button>
+          <p class="alt">Have an account? <a href="#/login">Sign in</a></p>
+        </form>
+      </section>
+    </main>
+
+    <footer><small>Fan-made demo. Character names belong to their respective owners. Add only artwork you are licensed to use.</small></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
